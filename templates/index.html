@@ -22,11 +22,18 @@
       box-shadow: 0 4px 20px rgba(0,0,0,0.08);
       padding: 30px;
     }
-    h1 {
+    .header-section {
       text-align: center;
-      font-size: 1.8rem;
       margin-bottom: 24px;
+    }
+    .header-section h1 {
+      font-size: 1.8rem;
       color: #0f172a;
+      margin-bottom: 8px;
+    }
+    .header-section .subtitle {
+      color: #64748b;
+      font-size: 1.1rem;
     }
     .form-group {
       margin-bottom: 20px;
@@ -85,11 +92,27 @@
       color: #64748b;
       font-size: 0.9rem;
     }
+    .developer-info {
+      margin-top: 12px;
+      font-size: 0.9rem;
+      color: #555;
+      line-height: 1.5;
+    }
+    .developer-info a {
+      color: #1e3a8a;
+      text-decoration: none;
+    }
+    .developer-info a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Agenda tu Turno</h1>
+    <div class="header-section">
+      <h1 id="professional-title">Estudio Profesional</h1>
+      <p class="subtitle">Agenda tu turno de forma rápida y segura</p>
+    </div>
     
     <form id="formTurno">
       <div class="form-group">
@@ -130,7 +153,13 @@
     <div id="mensaje"></div>
     
     <footer>
-      © AgendaPro — Sistema de gestión de turnos profesionales
+      <p>© 2026 Todos los derechos reservados</p>
+      <div class="developer-info">
+        Guillermo Enrique Oyarzo — Desarrollo de soluciones tecnológicas<br>
+        Sistemas • Automatización • Inteligencia Artificial<br>
+        📱 WhatsApp: <a href="https://wa.me/542804685815" target="_blank">+54 280 468-5815</a> | 
+        📧 <a href="mailto:geopat001@gmail.com">geopat001@gmail.com</a>
+      </div>
     </footer>
   </div>
 

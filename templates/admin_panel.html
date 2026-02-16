@@ -255,7 +255,7 @@
   <script>
     // === UTILIDADES ===
     const dias = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
-    
+
     // === CARGAR ESTADÍSTICAS ===
     async function cargarEstadisticas() {
       try {
@@ -390,19 +390,26 @@
         const tabId = btn.dataset.tab;
         document.getElementById(`tab-${tabId}`).classList.add('active');
         
-        // Cargar datos según la pestaña
-        if (tabId === 'turnos') cargarTurnos();
-        if (tabId === 'horarios') cargarHorarios();
+        if (tabId === 'turnos') {
+          cargarTurnos();
+          cargarEstadisticas();
+        }
+        if (tabId === 'horarios') {
+          cargarHorarios();
+        }
       });
     });
 
     // === EVENTOS ===
     document.getElementById('btn-guardar-horarios').addEventListener('click', guardarHorarios);
 
-    // === INICIALIZAR ===
+    // === INICIALIZAR + ACTUALIZACIÓN AUTOMÁTICA ===
     document.addEventListener('DOMContentLoaded', () => {
       cargarEstadisticas();
       cargarTurnos();
+
+      // Actualizar estadísticas cada 30 segundos
+      setInterval(cargarEstadisticas, 30000);
     });
   </script>
 </body>
